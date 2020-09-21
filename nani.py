@@ -73,8 +73,16 @@ def main():
     parser.add_argument("-g", "--groups", nargs="*", help="Project group names")
     parser.add_argument("-p", "--projects", nargs="*", help="Projects names")
     parser.add_argument("-v", "--verbose", action="store_true", help="Show some logs")
-    parser.add_argument("-s", "--seconds", default=DEFAULT_LOOP_SECONDS, help="Seconds between 2 checks")
-    parser.add_argument("-t", "--test", action="store_true", help="Test connection and sound")
+    parser.add_argument(
+        "-s",
+        "--seconds",
+        default=DEFAULT_LOOP_SECONDS,
+        type=int,
+        help="Seconds between 2 checks",
+    )
+    parser.add_argument(
+        "-t", "--test", action="store_true", help="Test connection and sound"
+    )
 
     args = parser.parse_args()
     if args.verbose:
